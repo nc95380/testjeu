@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quel Manager Es-Tu ? - Jeu d'Introspection Managériale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea; }
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <meta name="description" content="jeux">
+</head>
+<body class="bg-gray-50">
+    <!-- Header Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="floating absolute top-20 left-20 w-20 h-20 bg-white bg-opacity-20 rounded-full"></div>
+            <div class="floating absolute top-40 right-32 w-16 h-16 bg-white bg-opacity-15 rounded-full" style="animation-delay: 1s;"></div>
+            <div class="floating absolute bottom-32 left-40 w-24 h-24 bg-white bg-opacity-10 rounded-full" style="animation-delay: 2s;"></div>
+            <div class="floating absolute bottom-20 right-20 w-12 h-12 bg-white bg-opacity-25 rounded-full" style="animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <div class="mb-8">
+                <i class="fas fa-chess-king text-6xl text-white mb-6 floating"></i>
+            </div>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 typewriter">
+                Quel Manager Es-Tu ?
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-white text-opacity-90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Un jeu pour se découvrir, progresser et mieux manager… avec authenticité.
+            </p>
+            <button class="pulse-btn bg-white text-purple-700 px-12 py-6 rounded-full text-xl font-bold hover:bg-opacity-90 transition-all duration-300 shadow-2xl transform hover:scale-105">
+                <i class="fas fa-bell mr-3"></i>
+                Je veux être informé(e) du lancement
+            </button>
+        </div>
+    </section>
+
+    <!-- Présentation du concept -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center fade-in">
+                <div class="inline-flex items-center justify-center w-20 h-20 gradient-bg rounded-full mb-8">
+                    <i class="fas fa-lightbulb text-3xl text-white"></i>
+                </div>
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text mb-8">
+                    Le Concept Révolutionnaire
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                    Un jeu de cartes d'introspection managériale, à jouer en solo, en coaching ou en atelier. 
+                    À chaque carte, une situation réelle. À chaque réponse, un éclairage sur ta posture.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi ce jeu -->
+    <section class="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text mb-8">
+                    Pourquoi Ce Jeu ?
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg fade-in">
+                    <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-check text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mieux se connaître</h3>
+                    <p class="text-gray-600">Pour mieux manager et développer son leadership authentique</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg fade-in" style="animation-delay: 0.2s;">
+                    <div class="gradient-bg-2 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-eye text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Révéler ses réflexes</h3>
+                    <p class="text-gray-600">Découvrir ses automatismes managériaux et les comprendre</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg fade-in" style="animation-delay: 0.4s;">
+                    <div class="gradient-bg-3 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Progresser sans pression</h3>
+                    <p class="text-gray-600">Un environnement bienveillant sans jugement ni évaluation</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg fade-in" style="animation-delay: 0.6s;">
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Secteur public &amp; privé</h3>
+                    <p class="text-gray-600">Utilisable dans tous les environnements professionnels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pour qui -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text mb-8">
+                    Pour Qui ?
+                </h2>
+                <p class="text-xl text-gray-600">Ce jeu s'adresse à tous les professionnels du management</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="card-hover text-center bg-gradient-to-br from-purple-100 to-blue-100 p-8 rounded-2xl fade-in">
+                    <div class="gradient-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Managers</h3>
+                    <p class="text-sm text-gray-600">Équipes &amp; projets</p>
+                </div>
+                
+                <div class="card-hover text-center bg-gradient-to-br from-pink-100 to-red-100 p-8 rounded-2xl fade-in" style="animation-delay: 0.2s;">
+                    <div class="gradient-bg-2 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">RH</h3>
+                    <p class="text-sm text-gray-600">Ressources humaines</p>
+                </div>
+                
+                <div class="card-hover text-center bg-gradient-to-br from-blue-100 to-cyan-100 p-8 rounded-2xl fade-in" style="animation-delay: 0.4s;">
+                    <div class="gradient-bg-3 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chalkboard-teacher text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Coachs</h3>
+                    <p class="text-sm text-gray-600">&amp; Formateurs</p>
+                </div>
+                
+                <div class="card-hover text-center bg-gradient-to-br from-green-100 to-teal-100 p-8 rounded-2xl fade-in" style="animation-delay: 0.6s;">
+                    <div class="bg-gradient-to-r from-green-400 to-teal-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-landmark text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Agents</h3>
+                    <p class="text-sm text-gray-600">Collectivités</p>
+                </div>
+                
+                <div class="card-hover text-center bg-gradient-to-br from-yellow-100 to-orange-100 p-8 rounded-2xl fade-in" style="animation-delay: 0.8s;">
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-graduation-cap text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Étudiants</h3>
+                    <p class="text-sm text-gray-600">En management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fonctionnement du jeu -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-8">
+                    Comment Ça Marche ?
+                </h2>
+                <p class="text-xl text-white text-opacity-90">Un processus simple en 4 étapes</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="relative">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                            <i class="fas fa-hand-paper text-3xl text-purple-600"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Tire une carte</h3>
+                    <p class="text-white text-opacity-80">Découvre une situation managériale réelle</p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                            <i class="fas fa-mouse-pointer text-3xl text-purple-600"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Choisis ta réponse</h3>
+                    <p class="text-white text-opacity-80">Sélectionne l'approche qui te correspond</p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                            <i class="fas fa-search text-3xl text-purple-600"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Découvre ton style</h3>
+                    <p class="text-white text-opacity-80">Obtiens un éclairage sur ta posture</p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.6s;">
+                    <div class="relative">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                            <i class="fas fa-comments text-3xl text-purple-600"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Échange</h3>
+                    <p class="text-white text-opacity-80">Partage ou introspection personnelle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire d'inscription -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-8">
+                    Rejoins l'Aventure !
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Inscris-toi pour recevoir un aperçu gratuit + être alerté dès que le jeu est disponible.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl fade-in">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-user mr-2 text-purple-600"></i>
+                                Prénom
+                            </label>
+                            <input type="text" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors" placeholder="Votre prénom">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-envelope mr-2 text-purple-600"></i>
+                                Email
+                            </label>
+                            <input type="email" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors" placeholder="votre@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="gradient-bg text-white px-12 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-gift mr-3"></i>
+                            Je veux recevoir l'aperçu !
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note finale -->
+    <section class="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+                <div class="mb-6">
+                    <i class="fas fa-heart text-4xl text-red-500 mb-4"></i>
+                </div>
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
+                    "Ce jeu est né de 6 ans d'expérience RH. Il ne juge pas, il éclaire. 
+                    Merci de faire partie de l'aventure."
+                </p>
+                <div class="mt-8 flex items-center justify-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-gray-800">L'équipe RH</p>
+                        <p class="text-sm text-gray-600">6 ans d'expérience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <i class="fas fa-chess-king text-4xl text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-bold text-white">Quel Manager Es-Tu ?</h3>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">© 2025 Quel Manager Es-Tu ? Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour les liens
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation des boutons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating');
+            const speed = 0.5;
+
+            parallax.forEach(element => {
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
